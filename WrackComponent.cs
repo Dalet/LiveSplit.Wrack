@@ -20,15 +20,13 @@ namespace LiveSplit.Wrack
         }
 
         public WrackSettings Settings { get; set; }
-        public bool Disposed { get; private set; }
-        public bool IsLayoutComponent { get; private set; }
 
         private TimerModel _timer;
         private GameMemory _gameMemory;
         private LiveSplitState _state;
         public uint TimerTicks { get; protected set; }
         public uint DeathCounter { get; protected set; }
-        public WrackComponent(LiveSplitState state, bool isLayoutComponent)
+        public WrackComponent(LiveSplitState state)
         {
             bool debug = false;
 #if DEBUG
@@ -36,7 +34,6 @@ namespace LiveSplit.Wrack
 #endif
             Trace.WriteLine("[NoLoads] Using LiveSplit.Wrack component version " + Assembly.GetExecutingAssembly().GetName().Version + " " + ((debug) ? "Debug" : "Release") + " build");
             _state = state;
-            this.IsLayoutComponent = isLayoutComponent;
 
             this.Settings = new WrackSettings();
 
@@ -56,15 +53,12 @@ namespace LiveSplit.Wrack
 
         public override void Dispose()
         {
-            this.Disposed = true;
-
             _state.OnStart -= State_OnStart;
 
             if (_gameMemory != null)
             {
                 _gameMemory.Stop();
             }
-
         }
 
         void State_OnStart(object sender, EventArgs e)

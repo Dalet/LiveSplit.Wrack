@@ -135,6 +135,5 @@ namespace LiveSplit.Wrack
         }
 
         public override void Update(IInvalidator invalidator, LiveSplitState state, float width, float height, LayoutMode mode) { }
-        public override void RenameComparison(string oldName, string newName) { }
     }
 }

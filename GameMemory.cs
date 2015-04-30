@@ -39,6 +39,7 @@ namespace LiveSplit.Wrack
         private enum ExpectedExeSizes
         {
             steam_1_2_0 = 3059712,
+            steam_1_2_1 = 3055616
         }
 
         public uint frameCounter = 0;
@@ -47,7 +48,7 @@ namespace LiveSplit.Wrack
         {
             _gameTimePtr = new DeepPointer(0x19B014);
             _currentMapPtr = new DeepPointer(0x19B140);
-            _playerHealthPtr = new DeepPointer(0x0019D5A0, 0x14c);
+            _playerHealthPtr = new DeepPointer(0x0019D7A8, 0x14c);
             _isLevelDonePtr = new DeepPointer(0x199CF4);
 
             _ignorePIDs = new List<int>();
@@ -98,6 +99,9 @@ namespace LiveSplit.Wrack
                             return;
                         }
                     }
+
+                    if (game.MainModule.ModuleMemorySize == (int)ExpectedExeSizes.steam_1_2_0)
+                        _playerHealthPtr = new DeepPointer(0x0019D5A0, 0x14c);
 
                     Trace.WriteLine("[NoLoads] Got Wrack_steam.exe!");
 
@@ -220,10 +224,10 @@ namespace LiveSplit.Wrack
                 return null;
             }
 
-            if (game.MainModule.ModuleMemorySize != (int)ExpectedExeSizes.steam_1_2_0)
+            if (game.MainModule.ModuleMemorySize != (int)ExpectedExeSizes.steam_1_2_0 && game.MainModule.ModuleMemorySize != (int)ExpectedExeSizes.steam_1_2_1)
             {
                 _ignorePIDs.Add(game.Id);
-                _uiThread.Send(d => MessageBox.Show("Unexpected game version. Version 1.2.0 is required.\r\n ModuleMemorySize: " + game.MainModule.ModuleMemorySize, "LiveSplit.Wrack",
+                _uiThread.Send(d => MessageBox.Show("Unexpected game version. Version 1.2.1 or 1.2.0 is required.\r\n ModuleMemorySize: " + game.MainModule.ModuleMemorySize, "LiveSplit.Wrack",
                     MessageBoxButtons.OK, MessageBoxIcon.Error), null);
                 return null;
             }

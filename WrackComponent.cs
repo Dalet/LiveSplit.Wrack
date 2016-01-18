@@ -75,7 +75,7 @@ namespace LiveSplit.Wrack
             {
                 TimerTicks += ticks;
                 _state.SetGameTime(TimeSpan.FromSeconds((float)TimerTicks / (float)60));
-                Debug.WriteLine("OnTick: GameTime changed to: " + _state.CurrentTime.GameTime + " | Added " + ticks + " ticks | Total ticks " + TimerTicks + " - " + _gameMemory.frameCounter);
+                //Debug.WriteLine("OnTick: GameTime changed to: " + _state.CurrentTime.GameTime + " | Added " + ticks + " ticks | Total ticks " + TimerTicks + " - " + _gameMemory.frameCounter);
             }
         }
 

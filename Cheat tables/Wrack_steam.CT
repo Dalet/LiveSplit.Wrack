@@ -1,30 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CheatTable CheatEngineTableVersion="18">
+<CheatTable CheatEngineTableVersion="26">
   <CheatEntries>
     <CheatEntry>
       <ID>0</ID>
       <Description>"Level timer"</Description>
-      <LastState Value="0" Activated="0" RealAddress="0059B014"/>
-      <Color>80000008</Color>
+      <LastState Value="1683372" RealAddress="14019B014"/>
       <VariableType>4 Bytes</VariableType>
       <Address>Wrack_steam.exe+19B014</Address>
     </CheatEntry>
     <CheatEntry>
+      <ID>10</ID>
+      <Description>"Level timer (1.2.5)"</Description>
+      <LastState Value="13488" RealAddress="1401D7EB0"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>Wrack_steam.exe+1D7EB0</Address>
+    </CheatEntry>
+    <CheatEntry>
       <ID>1</ID>
       <Description>"Current Map"</Description>
-      <LastState Activated="0" RealAddress="0059B140"/>
-      <Color>80000008</Color>
+      <LastState RealAddress="14019B140"/>
       <VariableType>String</VariableType>
       <Length>50</Length>
       <Unicode>0</Unicode>
+      <CodePage>0</CodePage>
       <ZeroTerminate>1</ZeroTerminate>
       <Address>Wrack_steam.exe+19B140</Address>
     </CheatEntry>
     <CheatEntry>
+      <ID>15</ID>
+      <Description>"Player health (1.2.5)"</Description>
+      <LastState Value="68" RealAddress="21B122F0"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"Wrack_steam.exe"+001D9A48</Address>
+      <Offsets>
+        <Offset>1A0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9</ID>
+      <Description>"Player health (1.2.1)"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"Wrack_steam.exe"+0019D7A8</Address>
+      <Offsets>
+        <Offset>14C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
       <ID>4</ID>
       <Description>"Player health"</Description>
-      <LastState Value="??" Activated="0" RealAddress="0000014C"/>
-      <Color>80000008</Color>
       <VariableType>4 Bytes</VariableType>
       <Address>"Wrack_steam.exe"+0019D5A0</Address>
       <Offsets>
@@ -34,18 +57,34 @@
     <CheatEntry>
       <ID>7</ID>
       <Description>"isLevelDone"</Description>
-      <LastState Value="0" Activated="0" RealAddress="00599CF4"/>
-      <Color>80000008</Color>
+      <LastState Value="669504" RealAddress="140199CF4"/>
       <VariableType>4 Bytes</VariableType>
       <Address>Wrack_steam.exe+199CF4</Address>
     </CheatEntry>
     <CheatEntry>
       <ID>6</ID>
       <Description>"Game state?"</Description>
-      <LastState Value="0" Activated="0" RealAddress="00599C24"/>
-      <Color>80000008</Color>
+      <LastState Value="1848349" RealAddress="140199C24"/>
       <VariableType>4 Bytes</VariableType>
       <Address>Wrack_steam.exe+199C24</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>13</ID>
+      <Description>"Current map (1.2.5)"</Description>
+      <LastState RealAddress="1401D7C90"/>
+      <VariableType>String</VariableType>
+      <Length>50</Length>
+      <Unicode>0</Unicode>
+      <CodePage>0</CodePage>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>Wrack_steam.exe+1D7C90</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>16</ID>
+      <Description>"isLevelDone (1.2.5)"</Description>
+      <LastState Value="1" RealAddress="1401D5348"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>Wrack_steam.exe+1D5348</Address>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>

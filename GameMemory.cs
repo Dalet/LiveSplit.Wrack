@@ -40,10 +40,10 @@ namespace LiveSplit.Wrack
 
         public GameMemory()
         {
-            _gameTimePtr = new DeepPointer(0x19B014);
-            _currentMapPtr = new DeepPointer(0x19B140);
-            _playerHealthPtr = new DeepPointer(0x0019D7A8, 0x14c);
-            _isLevelDonePtr = new DeepPointer(0x199CF4);
+            _gameTimePtr = new DeepPointer(0x1D7EB0);
+            _currentMapPtr = new DeepPointer(0x1D7C90);
+            _playerHealthPtr = new DeepPointer(0x1D9A48, 0x1A0);
+            _isLevelDonePtr = new DeepPointer(0x1D5348);
         }
 
         public void StartMonitoring()
